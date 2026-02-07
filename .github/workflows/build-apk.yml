@@ -43,9 +43,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          BODY=$(tail -100 build-output.log | head -c 50000)
-          gh issue create --title "Build APK failed - $(date -u +%Y-%m-%dT%H:%M:%S)" --body "\`\`\`
-          ${BODY}
+          ERRORS=$(grep -E "^e:|error:|FAILURE|BUILD FAILED|Error:|Warning:" build-output.log | head -c 50000)
+          gh issue create --title "Build APK failed - $(date -u +%Y-%m-%dT%H:%M:%S)" --body "## Compilation Errors
+          \`\`\`
+          ${ERRORS}
           \`\`\`"
 
       - name: Upload APK
