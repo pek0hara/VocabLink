@@ -140,7 +140,7 @@ fun StatsScreen(viewModel: StatsViewModel) {
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     LinearProgressIndicator(
-                        progress = { accuracy },
+                        progress = accuracy,
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(8.dp)

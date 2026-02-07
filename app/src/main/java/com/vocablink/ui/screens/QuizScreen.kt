@@ -159,7 +159,7 @@ private fun QuizQuestionContent(state: QuizState, viewModel: QuizViewModel) {
         Spacer(modifier = Modifier.height(8.dp))
 
         LinearProgressIndicator(
-            progress = { (state.questionNumber + 1).toFloat() / state.totalQuestions },
+            progress = (state.questionNumber + 1).toFloat() / state.totalQuestions,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(6.dp)

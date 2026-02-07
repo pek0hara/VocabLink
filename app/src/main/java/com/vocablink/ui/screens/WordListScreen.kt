@@ -250,7 +250,7 @@ fun WordCard(
                 }
                 Spacer(modifier = Modifier.height(4.dp))
                 LinearProgressIndicator(
-                    progress = { word.accuracy },
+                    progress = word.accuracy,
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(4.dp)
